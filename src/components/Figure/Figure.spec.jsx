@@ -17,4 +17,31 @@ describe("<Figure />", () => {
 
 		expect(figure).toBeInTheDocument();
 	});
+
+	it("should render with correct description", () => {
+		renderTheme(
+			<Figure
+				alt="texto alternativo da imagem"
+				description="descrição da imagem"
+				src="imagem.png"
+			/>
+		);
+		const descrition = screen.getByText("descrição da imagem");
+
+		expect(descrition.innerHTML).toBe("descrição da imagem");
+	});
+
+	it("should render with correct image", () => {
+		renderTheme(
+			<Figure
+				alt="texto alternativo da imagem"
+				description="descrição da imagem"
+				src="imagem.png"
+			/>
+		);
+		const img = screen.getByRole("img");
+
+		expect(img).toHaveAttribute("src", "imagem.png");
+		expect(img).toHaveAttribute("alt", "texto alternativo da imagem");
+	});
 });
