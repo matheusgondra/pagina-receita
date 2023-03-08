@@ -6,7 +6,7 @@ export function Footer() {
 			<p>
 				Feito com 💖 por
 				<a
-					href="http://github.com/matheusgondra"
+					href="https://github.com/matheusgondra"
 					target="_blank"
 					rel="noreferrer"
 				>
